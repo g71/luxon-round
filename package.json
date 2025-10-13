@@ -9,7 +9,7 @@
   "type": "module",
   "repository": {
     "type": "git",
-    "url": "."
+    "url": "git+https://github.com/g71/luxon-round.git"
   },
   "keywords": [
     "luxon",
