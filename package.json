@@ -1,0 +1,22 @@
+{
+  "name": "@g71/luxon-round",
+  "version": "1.0.0",
+  "description": "Extend luxon with floor/round/ceil to multiple of unit",
+  "main": "luxon-round.js",
+  "scripts": {
+    "test": "node luxon-round-test.js"
+  },
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "."
+  },
+  "keywords": [
+    "luxon",
+    "floor",
+    "round",
+    "ceil"
+  ],
+  "author": "gbrl",
+  "license": "ISC"
+}
