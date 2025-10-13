@@ -33,3 +33,5 @@ if (!DateTime.prototype.ceil) {
     return adjustTime(Math.ceil, this, unit, multiple);
   }
 }
+
+export { DateTime };

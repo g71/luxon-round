@@ -1,5 +1,4 @@
-import { DateTime } from 'luxon';
-import './luxon-round.js';
+import { DateTime } from './luxon-round.js';
 
 let pass = 0, fail = 0;
 
