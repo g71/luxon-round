@@ -1,4 +1,5 @@
 import { DateTime } from './luxon-round.js';
+import { styleText } from 'node:util';
 
 let pass = 0, fail = 0;
 
@@ -7,7 +8,7 @@ const test = (op, time, unit, multiple, expected) => {
   actual === expected
     ? ++pass
     : ++fail;
-  console.log(`${op}(${time}) ${actual === expected ? '=' : '!='} ${expected}`);
+  console.log(`${op}(${time}) ${actual === expected ? styleText('green', '=') : styleText('red', '!=')} ${expected}`);
 }
 
 test('floor', "2025-10-03T11:45:11.014+02:00", 'minute', 15, "2025-10-03T11:45:00.000+02:00");
@@ -34,4 +35,4 @@ test('ceil', "2025-10-03T15:45:11.014+02:00", 'day', 10, "2025-10-10T00:00:00.00
 test('ceil', "2025-09-03T16:59:12.014+02:00", 'month', 1, "2025-10-01T00:00:00.000+02:00");
 test('ceil', "2025-10-03T17:00:00.000+02:00", 'year', 100, "2100-01-01T00:00:00.000+01:00");
 
-console.log(`${fail}/${pass + fail} tests failed`);
+console.log(styleText(fail === 0 ? 'green' : 'red', `${fail}/${pass + fail} tests failed`));
