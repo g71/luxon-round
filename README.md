@@ -1,6 +1,6 @@
 # luxon-round
 
-Adds floor, ceil, and round to multiple of Luxon DateTime units.
+Adds floor, ceil, and round to multiple of [Luxon DateTime](https://moment.github.io/luxon/api-docs/index.html#datetime) units.
 
 
 ## API
