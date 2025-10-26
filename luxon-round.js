@@ -34,4 +34,5 @@ if (!DateTime.prototype.ceil) {
   }
 }
 
+export default { DateTime };
 export { DateTime };

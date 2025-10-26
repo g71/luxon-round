@@ -1,6 +1,13 @@
 import { DateTime } from './luxon-round.js';
+import lr from './luxon-round.js';
+
 import { describe, it } from "node:test";
 import assert from "node:assert";
+
+describe('import', () => {
+  it('can be named and default imported', () => assert.strictEqual(lr.DateTime, DateTime));
+});
+
 
 function createTests(op, testData) {
   testData.forEach(d => {
@@ -49,3 +56,4 @@ describe('DateTime.ceil', () => {
     ["2025-10-03T17:00:00.000+02:00", 'year', 100, "2100-01-01T00:00:00.000+01:00"],
   ]);
 });
+
