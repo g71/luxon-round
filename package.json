@@ -1,6 +1,6 @@
 {
   "name": "@g71/luxon-round",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "Extend luxon with floor/round/ceil to multiple of unit",
   "main": "luxon-round.js",
   "scripts": {
