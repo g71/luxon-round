@@ -3,12 +3,25 @@ import { DateTime } from 'luxon';
 // Ceil/floor/round to multiple of unit
 function adjustTime(adjust, dateTime, unit, multiple) {
   const unitValue = dateTime.get(unit);
-  const raw = unitValue / multiple;
-  const adjusted = adjust(raw);
-  const direction = adjust === Math.ceil || adjusted > raw ? 1 : 0;
+
+  const roundingUp = () => {
+    if(adjust === Math.ceil) {
+      return true;
+    }
+
+    const raw = unitValue / multiple;
+    const adjusted = adjust(raw);
+
+    return adjusted > raw;
+  };
+
   const startOfUnit = dateTime.startOf(unit);
-  // increase unit value if rounding up and sub-units are > 0
-  const calcValue = unitValue + (dateTime > startOfUnit ? direction : 0);
+  let calcValue = unitValue;
+
+  if(dateTime > startOfUnit && roundingUp()) {
+    // sub-units are > 0 and rounding upwards, increase calc value
+    calcValue += 1;
+  }
 
   const newValue = {};
   newValue[unit] = adjust(calcValue / multiple) * multiple;

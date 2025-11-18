@@ -18,5 +18,8 @@
     "ceil"
   ],
   "author": "gbrl",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "luxon": "^3.7.2"
+  }
 }
